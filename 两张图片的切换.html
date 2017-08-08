@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片的切换</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul,li,ol,dl{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .concent{
+            width: 300px;
+            height: 600px;
+            margin: 30px auto;
+
+        }
+        main{
+            width: 180px;
+            height: 500px;
+            overflow:hidden;
+
+        }
+        section{
+            width: 180px;
+            height: 160px;
+            position: relative;
+
+        }
+        .concent ul{
+            display: flex;
+            margin-left: 0;
+            position: absolute;
+            top:0;
+            right: -180px;
+        }
+    </style>
+</head>
+<body>
+<div class="concent">
+    <main>
+        <section>
+        <ul>
+            <li><img src="images/1_1.jpg" alt=""></li>
+            <li><img src="images/1_2.jpg" alt=""></li>
+        </ul>
+        </section>
+        <section>
+        <ul>
+            <li><img src="images/2_1.jpg" alt=""></li>
+            <li><img src="images/2_2.jpg" alt=""></li>
+        </ul>
+        </section>
+        <section>
+        <ul>
+            <li><img src="images/3_1.jpg" alt=""></li>
+            <li><img src="images/3_2.jpg" alt=""></li>
+        </ul>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        var main = $('main');
+        $('ul').mouseover(function () {
+          $(this).stop().animate({
+                'left': '-180px'
+            })
+        }).mouseout(function () {
+            $(this).stop().animate({
+                'left':'0px'
+            })
+        })
+        })
+</script>
